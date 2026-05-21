@@ -1,0 +1,23 @@
+<idea-plugin>
+    <id>com.wyrmjin.animal-island-theme</id>
+    <name>Animal Island Theme</name>
+    <vendor url="https://github.com/wyrmjin">Wyrm Jin</vendor>
+
+    <description><![CDATA[
+        <p>A warm, organic theme inspired by the Animal Island UI component library</p>
+        <p><a href="https://github.com/guokaigdg/animal-island-ui">animal-island-ui</a></p>
+        <p>Features:</p>
+        <ul>
+            <li>Warm cream/buttermilk background with rich brown typography</li>
+            <li>Mint teal accent colors for a fresh, playful feel</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <themeProvider
+                id="com.wyrmjin.animal-island-theme"
+                path="/animal_island.theme.json"/>
+    </extensions>
+</idea-plugin>
