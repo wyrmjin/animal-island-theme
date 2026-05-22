@@ -31,6 +31,15 @@ intellijPlatform {
             </ul>
         """.trimIndent()
     }
+
+    signing {
+        certificateChainFile.set(file("certificate/chain.crt"))
+        privateKeyFile.set(file("certificate/private.pem"))
+    }
+
+    publishing {
+        token.set(providers.environmentVariable("PUBLISH_TOKEN"))
+    }
 }
 
 tasks.named("buildSearchableOptions") {

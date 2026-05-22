@@ -5,6 +5,7 @@ build/
 .intellijPlatform/
 *.iml
 out/
+certificate/
 .DS_Store
 
 
