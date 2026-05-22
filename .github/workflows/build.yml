@@ -1,6 +1,9 @@
-name: Build Plugin
+name: Build and Release
 
 on:
+  push:
+    tags:
+      - "*"
   workflow_dispatch:
 
 jobs:
@@ -19,11 +22,20 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Build Plugin
-        run: ./gradlew buildPlugin
+      - name: Write signing certificate files
+        env:
+          CERTIFICATE_CHAIN: ${{ secrets.CERTIFICATE_CHAIN }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        run: |
+          mkdir -p certificate
+          echo "$CERTIFICATE_CHAIN" > certificate/chain.crt
+          echo "$PRIVATE_KEY" > certificate/private.pem
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Build and Sign Plugin
+        run: ./gradlew signPlugin
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: animal-island-theme
-          path: build/distributions/*.zip
+          files: build/distributions/*-signed.zip
+          generate_release_notes: true
