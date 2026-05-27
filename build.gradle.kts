@@ -27,6 +27,10 @@ intellijPlatform {
         changeNotes = """
             <h3>2026.1.0527</h3>
             <ul>
+                <li>add dark mode</li>
+            </ul>
+            <h3>2026.1.0521</h3>
+            <ul>
                 <li>Animal Island theme</li>
             </ul>
         """.trimIndent()
