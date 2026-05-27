@@ -2,6 +2,7 @@
 .gradle/
 build/
 .idea/
+.run/
 .intellijPlatform/
 *.iml
 out/

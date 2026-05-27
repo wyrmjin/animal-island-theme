@@ -8,7 +8,8 @@
         <p><a href="https://github.com/guokaigdg/animal-island-ui">animal-island-ui</a></p>
         <p>Features:</p>
         <ul>
-            <li>Warm cream/buttermilk background with rich brown typography</li>
+            <li>Warm cream/buttermilk background with rich brown typography (Light)</li>
+            <li>Deep chocolate brown background with warm cream typography (Dark)</li>
             <li>Mint teal accent colors for a fresh, playful feel</li>
         </ul>
     ]]></description>
@@ -17,7 +18,10 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <themeProvider
-                id="com.wyrmjin.animal-island-theme"
-                path="/animal_island.theme.json"/>
+                id="com.wyrmjin.animal-island-theme-light"
+                path="/animal_island_light.theme.json"/>
+        <themeProvider
+                id="com.wyrmjin.animal-island-theme-dark"
+                path="/animal_island_dark.theme.json"/>
     </extensions>
 </idea-plugin>

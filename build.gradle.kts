@@ -1,9 +1,9 @@
 plugins {
-    id("org.jetbrains.intellij.platform") version "2.16.0"
+    alias(libs.plugins.intellij.platform)
 }
 
 group = "com.wyrmjin"
-version = "2026.1.0521"
+version = "2026.1.0527"
 
 repositories {
     mavenCentral()
@@ -25,7 +25,7 @@ intellijPlatform {
             sinceBuild = "251"
         }
         changeNotes = """
-            <h3>2026.1.0521</h3>
+            <h3>2026.1.0527</h3>
             <ul>
                 <li>Animal Island theme</li>
             </ul>
